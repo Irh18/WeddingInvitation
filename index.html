@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Style+Script&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
@@ -19,6 +20,7 @@
             justify-content: center;
             align-items: center;
             position: relative;
+            /*font-family: 'Poppins';*/
         }
         .content {
             background-color: rgba(255, 255, 255, 0.9);
@@ -34,14 +36,14 @@
             overflow: hidden;
         }
         .slide {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    text-align: center;
-    padding: 25px;
-}
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            text-align: center;
+            padding: 25px;
+        }
         .active {
             display: flex; /* Tampilkan slide yang aktif */
             opacity: 1;
@@ -63,13 +65,13 @@
         }
         .bottom-bar {
             position: absolute;
-            bottom: 10px;
+            bottom: 0px;
             display: flex;
             justify-content: center;
-            width: 90%;
-            padding: 10px 0;
+            width: 100%;
+            padding: 15px 0;
             background: white;
-            border-radius: 10px;
+            /* border-radius: 10px; */
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         }
         .icon-button {
@@ -94,17 +96,18 @@
             }
         }
         .small-text {
-        font-size: 12px;
+        font-size: 10px;
         }
         .nama-mempelai {
-    /* border-radius: 10px; */
-    /* padding: 10px; */
-    /* background-color: #ffffff; */
-    top: 45%;
-    position: absolute;
-    font-family: 'Pinyon Script', cursive;
-    font-size: 40px;
-}
+            color: #4a9ac3;
+            border-radius: 10px;
+            padding: 8px;
+            background-color: #ffffff;
+            top: 45%;
+            position: absolute;
+            font-family: 'Pinyon Script', cursive;
+            font-size: 34px;
+        }
         .nama-pengantin {
             font-size: 36px;
             font-weight: bold;
@@ -113,46 +116,63 @@
             font-family: 'Pinyon Script', cursive;
         }
         .open {
-    background-color: #4a9ac3;
-    padding: 10px;
-    font-size: 18px;
-    color: white;
-    border-radius: 10px;
+            background-color: #4a9ac3;
+            padding: 10px;
+            font-size: 18px;
+            color: white;
+            border-radius: 10px;
+        }
+        .doa {
+            font-size: 23px;
+        }
+        .judul {
+            font-size: 23px;
+        }
+        .arab {
+            font-size: 30px;
+            margin-top: 3px;
+        }
+        .rotate {
+  animation: move-diagonal-up 5s cubic-bezier(0.5, 0, 0.5, 1) infinite;
 }
-.doa {
-    font-size: 23px;
+
+@keyframes move-diagonal-up {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-20px, -20px);
+  }
 }
-.arab {
-    font-size: 30px;
-    margin-top: 3px;
-}
+
+
     </style>
 </head>
 <body>
     <div class="content">
         <div class="slide active">
-    <h1>Walimatul Ursy</h1>
-    <img src="https://www.tamuspecial.com/wp-content/uploads/2022/01/Kartun-Pengantin-muslim-2.png" alt="Gambar Pengantin Muslim" style="width: 75%;margin: 20px auto;">
+    <h1 class="judul"> The Wedding Of</h1>
+    <img src="https://www.tamuspecial.com/wp-content/uploads/2022/01/Kartun-Pengantin-muslim-2.png" alt="Gambar Pengantin Muslim" style="width: 210px;margin: 20px auto;">
     <p class="nama-mempelai"><strong>Irham & Mega</strong></p>
     <p> Kepada Yth:<br> Bapak/Ibu/Saudara/i</p>
-    <img src="https://i.pinimg.com/originals/07/44/66/074466b0064e54583c371fb30d307447.png" alt="Cincin" style="width: 30%;margin: 20px auto;">
+    <img src="https://i.pinimg.com/originals/07/44/66/074466b0064e54583c371fb30d307447.png" alt="Cincin" style="width: 65px;margin: 20px auto;">
     <p class="open" onclick="showSlide(1)">Buka Undangan</p>
 </div>
         <div class="slide">
-            <img src="https://www.nicepng.com/png/full/13-132911_free-vector-vintage-png-transparent-vintage-vector-png.png" alt="Cincin" style="width: 50%;margin: 20px auto;">
+            <img src="https://www.nicepng.com/png/full/13-132911_free-vector-vintage-png-transparent-vintage-vector-png.png" alt="Vintage" style="width: 50%;margin: 20px auto;">
             <h1 class="doa"> Doa Untuk Pengantin</h1><br>
             <p class="arab"> َارَكَ اللَّهُ لَكَ وَبَارَكَ عَلَيْكَ<br> وَجَمَعَ بَيْنَكُمَا فِى خَيْرٍ</p><br>
             <p>“Semoga Allah memberkahimu ketika bahagia dan ketika susah dan mengumpulkan kalian berdua dalam kebaikan.”</p>
-            <img src="https://www.nicepng.com/png/full/13-132911_free-vector-vintage-png-transparent-vintage-vector-png.png" alt="Cincin" style="width: 50%;margin: 20px auto;">
+            <img src="https://www.nicepng.com/png/full/13-132911_free-vector-vintage-png-transparent-vintage-vector-png.png" alt="Vintage" style="width: 50%;margin: 20px auto;">
         </div>
         <div class="slide">
-            <p>Bismillahirrahmanirrahim<br>Assalamu'alaikum Waramatullahi Wabarakatuh</p><br>
+            <p>Assalamu'alaikum Waramatullahi Wabarakatuh</p><br>
             <p>Dengan segala kerendahan hati, kami mengundang Bapak/Ibu/Saudara/i untuk menghadiri pernikahan kami</p>
             <h1 class="nama-pengantin">Irham</h1>
             <p class="small-text"><em>Anak Kedua dari Bapak Abdul Muis dan Ibu Hasni</em></p>
             <h1 class="nama-pengantin">&</h1>
             <h1 class="nama-pengantin">Mega Putri Indah</h1>
-            <p class="small-text"><em>Anak Ketiga dari Bapak Jamaluddin dan Ibu Hasia</em></p><br><br><br>
+            <p class="small-text"><em>Anak Ketiga dari Bapak Jamaluddin dan Ibu Hasia</em></p>
         </div>
         <div class="slide">
             <h1>Slide 4</h1>
@@ -167,6 +187,14 @@
             <p>Semoga hari Anda menyenangkan!</p>
         </div>
     </div>
+
+    <img src="https://static.vecteezy.com/system/resources/previews/016/408/032/non_2x/blue-floral-bouquet-with-watercolor-png.png" alt="Cincin" class="rotate" style="position: absolute;width: 160px;margin: 20px auto;opacity: 1;bottom: 5px;left: -10px;">
+    
+    <img src="https://png.pngtree.com/png-clipart/20230312/ourmid/pngtree-transparent-watercolor-flowers-png-image_6646331.png" alt="Cincin" class="rotate" style="position: absolute;width: 160px;margin: 20px auto;opacity: 1;bottom: -25px;right: -50px;">
+    
+    <img src="https://png.pngtree.com/png-clipart/20230312/ourmid/pngtree-transparent-watercolor-flowers-png-image_6646331.png" alt="Cincin" class="rotate" style="position: absolute;width: 160px;margin: 20px auto;opacity: 1;top: -80px;left: -50px;">
+
+    <img src="https://png.pngtree.com/png-clipart/20230312/ourmid/pngtree-transparent-watercolor-flowers-png-image_6646331.png" alt="Cincin" class="rotate" style="position: absolute;width: 160px;margin: 20px auto;opacity: 1;top: -80px;right: -50px;">
 
     <div class="bottom-bar">
         <button class="icon-button active-icon" onclick="showSlide(0)"><i class="fas fa-home"></i></button>

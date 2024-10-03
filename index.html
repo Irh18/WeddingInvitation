@@ -132,18 +132,65 @@
             font-size: 30px;
             margin-top: 3px;
         }
-        .rotate {
-  animation: move-diagonal-up 5s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-}
 
-@keyframes move-diagonal-up {
-  0%, 100% {
-    transform: translate(0, 0);
-  }
-  50% {
-    transform: translate(-20px, -20px);
-  }
-}
+        .kananatas {
+            animation: kananatas 5s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+        }
+
+        @keyframes kananatas {
+        0%, 100% {
+            transform: translate(0, 0);
+        }
+        50% {
+            transform: translate(-20px, 20px) rotate(10deg);
+        }
+        }
+
+        .kiriatas {
+            animation: kiriatas 5s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+        }
+
+        @keyframes kiriatas {
+        0%, 100% {
+            transform: translate(0, 0);
+        }
+        50% {
+            transform: translate(20px, 20px) rotate(10deg);
+        }
+        }
+
+        .kananbawah {
+            animation: kananbawah 5s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+        }
+
+        @keyframes kananbawah {
+        0%, 100% {
+            transform: translate(0, 0);
+        }
+        50% {
+            transform: translate(-20px, -20px) rotate(-10deg);
+        }
+        }
+
+        .kiribawah {
+            animation: kiribawah 5s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+        }
+
+        @keyframes kiribawah {
+        0%, 100% {
+            transform: translate(0, 0);
+        }
+        50% {
+            transform: translate(20px, -20px) rotate(10deg);
+        }
+        }
+
+        .container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden; 
+        }
 
 
     </style>
@@ -155,15 +202,14 @@
     <img src="https://www.tamuspecial.com/wp-content/uploads/2022/01/Kartun-Pengantin-muslim-2.png" alt="Gambar Pengantin Muslim" style="width: 210px;margin: 20px auto;">
     <p class="nama-mempelai"><strong>Irham & Mega</strong></p>
     <p> Kepada Yth:<br> Bapak/Ibu/Saudara/i</p>
-    <img src="https://i.pinimg.com/originals/07/44/66/074466b0064e54583c371fb30d307447.png" alt="Cincin" style="width: 65px;margin: 20px auto;">
+    <img src="https://raw.githubusercontent.com/Irh18/WeddingInvitation/refs/heads/main/cincin.png" alt="Cincin" style="width: 65px;margin: 20px auto;">
     <p class="open" onclick="showSlide(1)">Buka Undangan</p>
 </div>
         <div class="slide">
-            <img src="https://www.nicepng.com/png/full/13-132911_free-vector-vintage-png-transparent-vintage-vector-png.png" alt="Vintage" style="width: 50%;margin: 20px auto;">
+            <img src="https://raw.githubusercontent.com/Irh18/WeddingInvitation/refs/heads/main/Doa.png" alt="Vintage" style="width: 50%;margin: 20px auto;">
             <h1 class="doa"> Doa Untuk Pengantin</h1><br>
             <p class="arab"> َارَكَ اللَّهُ لَكَ وَبَارَكَ عَلَيْكَ<br> وَجَمَعَ بَيْنَكُمَا فِى خَيْرٍ</p><br>
             <p>“Semoga Allah memberkahimu ketika bahagia dan ketika susah dan mengumpulkan kalian berdua dalam kebaikan.”</p>
-            <img src="https://www.nicepng.com/png/full/13-132911_free-vector-vintage-png-transparent-vintage-vector-png.png" alt="Vintage" style="width: 50%;margin: 20px auto;">
         </div>
         <div class="slide">
             <p>Assalamu'alaikum Waramatullahi Wabarakatuh</p><br>
@@ -188,14 +234,13 @@
         </div>
     </div>
 
-    <img src="https://static.vecteezy.com/system/resources/previews/016/408/032/non_2x/blue-floral-bouquet-with-watercolor-png.png" alt="Cincin" class="rotate" style="position: absolute;width: 160px;margin: 20px auto;opacity: 1;bottom: 5px;left: -10px;">
+    <div class="container">
+        <img src="https://raw.githubusercontent.com/Irh18/WeddingInvitation/refs/heads/main/kiri%20bawah.png" alt="Cincin" class="kiribawah" style="position: absolute;width: 160px;margin: 20px auto;opacity: 1;bottom: -25px;left: -50px;">
+        <img src="https://raw.githubusercontent.com/Irh18/WeddingInvitation/refs/heads/main/kanan%20bawah.png" alt="Cincin" class="kananbawah" style="position: absolute;width: 160px;margin: 20px auto;opacity: 1;bottom: -25px;right: -50px;">
+        <img src="https://raw.githubusercontent.com/Irh18/WeddingInvitation/refs/heads/main/kiri%20atas.png" alt="Cincin" class="kiriatas" style="position: absolute;width: 160px;margin: 20px auto;opacity: 1;top: -80px;left: -50px;">
+        <img src="https://raw.githubusercontent.com/Irh18/WeddingInvitation/refs/heads/main/kanan%20atas.png" alt="Cincin" class="kananatas" style="position: absolute;width: 160px;margin: 20px auto;opacity: 1;top: -80px;right: -50px;">
+    </div>
     
-    <img src="https://png.pngtree.com/png-clipart/20230312/ourmid/pngtree-transparent-watercolor-flowers-png-image_6646331.png" alt="Cincin" class="rotate" style="position: absolute;width: 160px;margin: 20px auto;opacity: 1;bottom: -25px;right: -50px;">
-    
-    <img src="https://png.pngtree.com/png-clipart/20230312/ourmid/pngtree-transparent-watercolor-flowers-png-image_6646331.png" alt="Cincin" class="rotate" style="position: absolute;width: 160px;margin: 20px auto;opacity: 1;top: -80px;left: -50px;">
-
-    <img src="https://png.pngtree.com/png-clipart/20230312/ourmid/pngtree-transparent-watercolor-flowers-png-image_6646331.png" alt="Cincin" class="rotate" style="position: absolute;width: 160px;margin: 20px auto;opacity: 1;top: -80px;right: -50px;">
-
     <div class="bottom-bar">
         <button class="icon-button active-icon" onclick="showSlide(0)"><i class="fas fa-home"></i></button>
         <button class="icon-button" onclick="showSlide(1)"><i class="fas fa-heart"></i></button>

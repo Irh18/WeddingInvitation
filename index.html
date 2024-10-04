@@ -210,9 +210,9 @@
     <h1 class="judul"> The Wedding Of</h1>
     <img src="https://www.tamuspecial.com/wp-content/uploads/2022/01/Kartun-Pengantin-muslim-2.png" alt="Gambar Pengantin Muslim" style="width: 210px;margin: 20px auto;">
     <p class="nama-mempelai"><strong>Irham & Mega</strong></p>
-    <p> Kepada Yth:<br> Bapak/Ibu/Saudara/i</p><br>
-    <p class="open" onclick="showSlide(1)">Nama Tamu</p><br>
+    <p> Kepada Yth:<br> Bapak/Ibu/Saudara/i</p><br><br><br>
     <img src="https://raw.githubusercontent.com/Irh18/WeddingInvitation/refs/heads/main/cincin.png" alt="Cincin" style="width: 65px;margin: 20px auto;">
+    <p id="namaTamu" class="open" onclick="handleClick()" style="position: absolute;bottom: 207px;">Wahyu &amp; Ny</p>
 </div>
         <div class="slide">
             <img src="https://raw.githubusercontent.com/Irh18/WeddingInvitation/refs/heads/main/Doa.png" alt="Vintage" style="width: 50%;margin: 20px auto;">
@@ -266,26 +266,64 @@
         <button class="icon-button" onclick="showSlide(4)"><i class="fas fa-user-friends"></i></button>
         <button class="icon-button" onclick="showSlide(5)"><i class="fas fa-times"></i></button>
     </div>
-
-    <audio autoplay loop>
+    
+    <audio id="backgroundAudio" autoplay loop>
         <source src="https://github.com/Irh18/WeddingInvitation/raw/0c9dd506cf131248cecdfb27a317834fbdf33164/Wedding%20Nasheed%20Ala%20Jabiri%20Nisa%20Muhammad%20Al%20Muqit%20English%20Translation%20shorts%20youtubeshorts.mp3" type="audio/mpeg">
         Your browser does not support the audio tag.
     </audio>
 
-    <script>
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.slide');
-        const iconButtons = document.querySelectorAll('.icon-button');
+<button id="muteButton" style="
+    position: absolute;
+    background: white;
+    border: none;
+    color: #4a9ac3;
+    bottom: 86px;
+    right: 26px;
+    width: 35px;
+    height: 35px;
+    border-radius: 20px;
+"><i id="muteIcon" class="fas fa-volume-up"></i></button>
 
-        function showSlide(index) {
-            currentSlide = index;
-            slides.forEach((slide, i) => {
-                slide.classList.toggle('active', i === index);
-            });
-            iconButtons.forEach((iconButton, i) => {
-                iconButton.classList.toggle('active-icon', i === index);
-            });
+    <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const iconButtons = document.querySelectorAll('.icon-button');
+    const backgroundAudio = document.getElementById('backgroundAudio');
+
+    function showSlide(index) {
+        currentSlide = index;
+        slides.forEach((slide, i) => {
+            slide.classList.toggle('active', i === index);
+        });
+        iconButtons.forEach((iconButton, i) => {
+            iconButton.classList.toggle('active-icon', i === index);
+        });
+        backgroundAudio.play(); // Memainkan audio setiap kali tombol diklik
+    }
+
+    function handleClick() {
+        showSlide(1); // Menampilkan slide ke-1 setelah diklik
+        document.getElementById('namaTamu').style.display = 'none'; // Menyembunyikan teks "Nama Tamu"
+    }
+
+    let isMuted = false; // Variabel untuk menyimpan status mute
+
+    const muteButton = document.getElementById('muteButton');
+    const muteIcon = document.getElementById('muteIcon');
+    muteButton.addEventListener('click', () => {
+        if (isMuted) {
+            backgroundAudio.muted = false; // Unmute
+            muteIcon.classList.remove('fa-volume-mute'); // Hapus ikon mute
+            muteIcon.classList.add('fa-volume-up'); // Ganti ikon ke volume up
+            muteIcon.classList.remove('strikethrough'); // Hapus coretan
+        } else {
+            backgroundAudio.muted = true; // Mute
+            muteIcon.classList.remove('fa-volume-up'); // Hapus ikon volume up
+            muteIcon.classList.add('fa-volume-mute'); // Ganti ikon ke mute
+            muteIcon.classList.add('strikethrough'); // Tambah coretan
         }
+        isMuted = !isMuted; // Toggle status mute
+    });
     </script>
 </body>
 </html>

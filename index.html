@@ -11,6 +11,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+
     <style>
         body {
             margin: 0;
@@ -201,18 +204,35 @@
             font-size: 15px;
         }
 
+        .disabled {
+    pointer-events: none; /* Mencegah interaksi dengan elemen */
+    opacity: 1; /* Menambahkan efek transparansi */
+}
+
+
 
     </style>
 </head>
 <body>
+
+    <div class="container">
+        <img src="https://raw.githubusercontent.com/Irh18/WeddingInvitation/refs/heads/main/kiri%20bawah.png" alt="Cincin" class="kiribawah" style="position: absolute;width: 160px;margin: 20px auto;opacity: 1;bottom: -50px;left: -50px;">
+        <img src="https://raw.githubusercontent.com/Irh18/WeddingInvitation/refs/heads/main/kanan%20bawah.png" alt="Cincin" class="kananbawah" style="position: absolute;width: 160px;margin: 20px auto;opacity: 1;bottom: -50px;right: -50px;">
+        <img src="https://raw.githubusercontent.com/Irh18/WeddingInvitation/refs/heads/main/kiri%20atas.png" alt="Cincin" class="kiriatas" style="position: absolute;width: 160px;margin: 20px auto;opacity: 1;top: -80px;left: -50px;">
+        <img src="https://raw.githubusercontent.com/Irh18/WeddingInvitation/refs/heads/main/kanan%20atas.png" alt="Cincin" class="kananatas" style="position: absolute;width: 160px;margin: 20px auto;opacity: 1;top: -80px;right: -50px;">
+    </div>
+
+
     <div class="content">
         <div class="slide active">
-    <h1 class="judul"> The Wedding Of</h1>
+    <h1 class="judul" data-id="judul"> The Wedding Of</h1>
     <img src="https://www.tamuspecial.com/wp-content/uploads/2022/01/Kartun-Pengantin-muslim-2.png" alt="Gambar Pengantin Muslim" style="width: 210px;margin: 20px auto;">
     <p class="nama-mempelai"><strong>Irham & Mega</strong></p>
-    <p> Kepada Yth:<br> Bapak/Ibu/Saudara/i</p><br><br><br>
+    <p> Kepada Yth:<br> Bapak/Ibu/Saudara/i</p><br>
+    <strong style="background: #f9f9f9; padding: 10px; border-radius: 8px; font-size: 20px;">Wardan &amp; Ny</strong>
     <img src="https://raw.githubusercontent.com/Irh18/WeddingInvitation/refs/heads/main/cincin.png" alt="Cincin" style="width: 65px;margin: 20px auto;">
-    <p id="namaTamu" class="open" onclick="handleClick()" style="position: absolute;bottom: 207px;">Wahyu &amp; Ny</p>
+    <p id="bukaundangan" class="open" onclick="handleClick()" style="position: absolute;bottom: 120px;">Buka Undangan</p>  
+      
 </div>
         <div class="slide">
             <img src="https://raw.githubusercontent.com/Irh18/WeddingInvitation/refs/heads/main/Doa.png" alt="Vintage" style="width: 50%;margin: 20px auto;">
@@ -251,14 +271,9 @@
         </div>
     </div>
 
-    <div class="container">
-        <img src="https://raw.githubusercontent.com/Irh18/WeddingInvitation/refs/heads/main/kiri%20bawah.png" alt="Cincin" class="kiribawah" style="position: absolute;width: 160px;margin: 20px auto;opacity: 1;bottom: -50px;left: -50px;">
-        <img src="https://raw.githubusercontent.com/Irh18/WeddingInvitation/refs/heads/main/kanan%20bawah.png" alt="Cincin" class="kananbawah" style="position: absolute;width: 160px;margin: 20px auto;opacity: 1;bottom: -50px;right: -50px;">
-        <img src="https://raw.githubusercontent.com/Irh18/WeddingInvitation/refs/heads/main/kiri%20atas.png" alt="Cincin" class="kiriatas" style="position: absolute;width: 160px;margin: 20px auto;opacity: 1;top: -80px;left: -50px;">
-        <img src="https://raw.githubusercontent.com/Irh18/WeddingInvitation/refs/heads/main/kanan%20atas.png" alt="Cincin" class="kananatas" style="position: absolute;width: 160px;margin: 20px auto;opacity: 1;top: -80px;right: -50px;">
-    </div>
+
     
-    <div class="bottom-bar">
+    <div class="bottom-bar disabled"> <!-- Tambahkan class 'disabled' di sini -->
         <button class="icon-button active-icon" onclick="showSlide(0)"><i class="fas fa-home"></i></button>
         <button class="icon-button" onclick="showSlide(1)"><i class="fas fa-heart"></i></button>
         <button class="icon-button" onclick="showSlide(2)"><i class="fas fa-ring"></i></button>
@@ -272,17 +287,18 @@
         Your browser does not support the audio tag.
     </audio>
 
-<button id="muteButton" style="
-    position: absolute;
-    background: white;
-    border: none;
-    color: #4a9ac3;
-    bottom: 86px;
-    right: 26px;
-    width: 35px;
-    height: 35px;
-    border-radius: 20px;
-"><i id="muteIcon" class="fas fa-volume-up"></i></button>
+<button id="muteButton" style="position: absolute;background: white;border: none; color: #4a9ac3; bottom: 86px; right: 26px; width: 35px; height: 35px; border-radius: 20px; "><i id="muteIcon" class="fas fa-volume-up"></i></button>
+
+<button onclick="toggleEdit()" style="position: absolute;bottom: 86px;right: 70px;width: 35px;height: 35px;border-radius: 20px;border: none;color: #4a9ac3;background: white;"><i class="fas fa-pen"></i></button>
+
+<div id="editButtons" style="display: none; position: absolute; bottom: 50px; right: 70px;">
+    <button onclick="saveChanges()" style="border: none; background: white; color: #4a9ac3;">
+        <i class="fas fa-save"></i> Save
+    </button>
+    <button onclick="cancelEdit()" style="border: none; background: white; color: #4a9ac3;">
+        <i class="fas fa-times"></i> Cancel
+    </button>
+</div>
 
     <script>
     let currentSlide = 0;
@@ -290,21 +306,32 @@
     const iconButtons = document.querySelectorAll('.icon-button');
     const backgroundAudio = document.getElementById('backgroundAudio');
 
-    function showSlide(index) {
-        currentSlide = index;
-        slides.forEach((slide, i) => {
-            slide.classList.toggle('active', i === index);
-        });
-        iconButtons.forEach((iconButton, i) => {
-            iconButton.classList.toggle('active-icon', i === index);
-        });
-        backgroundAudio.play(); // Memainkan audio setiap kali tombol diklik
-    }
+    const bottomBar = document.querySelector('.bottom-bar');
 
-    function handleClick() {
-        showSlide(1); // Menampilkan slide ke-1 setelah diklik
-        document.getElementById('namaTamu').style.display = 'none'; // Menyembunyikan teks "Nama Tamu"
-    }
+function showSlide(index) {
+    currentSlide = index;
+    slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+    });
+    iconButtons.forEach((iconButton, i) => {
+        iconButton.classList.toggle('active-icon', i === index);
+    });
+    backgroundAudio.play(); // Memainkan audio setiap kali tombol diklik
+}
+
+function handleClick() {
+    showSlide(1); // Menampilkan slide ke-1 setelah diklik
+    document.getElementById('bukaundangan').style.display = 'none'; // Menyembunyikan teks "Nama Tamu"
+
+    // Menghapus class 'disabled' dari bottom bar
+    bottomBar.classList.remove('disabled');
+}
+
+// Inisialisasi: Menonaktifkan elemen bottom bar saat halaman dimuat
+window.addEventListener('DOMContentLoaded', () => {
+    bottomBar.classList.add('disabled');
+});
+
 
     let isMuted = false; // Variabel untuk menyimpan status mute
 
@@ -324,6 +351,98 @@
         }
         isMuted = !isMuted; // Toggle status mute
     });
+
+    let editing = false;
+
+document.addEventListener('DOMContentLoaded', loadFromLocalStorage);
+
+function toggleEdit() {
+    if (editing) {
+        // If already editing, just toggle off
+        editing = false;
+        const elements = document.querySelectorAll('.content h1, .content p');
+        const editButtons = document.getElementById('editButtons');
+
+        elements.forEach(el => {
+            el.contentEditable = false;
+            el.style.border = 'none';
+        });
+
+        editButtons.style.display = 'none';
+        return;
+    }
+
+    // Prompt for PIN using SweetAlert
+    Swal.fire({
+        title: 'Masukkan PIN untuk mengedit',
+        input: 'text',
+        inputAttributes: {
+            autocapitalize: 'off'
+        },
+        showCancelButton: true,
+        confirmButtonText: 'Verifikasi',
+        cancelButtonText: 'Batal',
+        preConfirm: (inputValue) => {
+            if (inputValue !== "182598") {
+                Swal.showValidationMessage('PIN salah. Silakan coba lagi.');
+            }
+            return inputValue;
+        }
+    }).then((result) => {
+        if (result.isConfirmed) {
+            editing = true;
+            const elements = document.querySelectorAll('.content h1, .content p');
+            const editButtons = document.getElementById('editButtons');
+
+            elements.forEach(el => {
+                el.contentEditable = true;
+                el.style.border = '1px dashed #ccc';
+            });
+
+            editButtons.style.display = 'block';
+        }
+    });
+}
+
+
+
+function saveChanges() {
+    const elements = document.querySelectorAll('.content h1, .content p');
+    elements.forEach(el => {
+        el.contentEditable = false;
+        el.style.border = 'none';
+        saveToLocalStorage(el);
+    });
+    toggleEdit(); // Hide the edit buttons and finalize editing
+}
+
+function cancelEdit() {
+    const elements = document.querySelectorAll('.content h1, .content p');
+    elements.forEach(el => {
+        el.contentEditable = false;
+        el.style.border = 'none';
+        // Optionally revert changes if necessary
+    });
+    toggleEdit(); // Hide the edit buttons and finalize editing
+}
+
+function saveToLocalStorage(el) {
+    const key = el.tagName + '_' + el.dataset.id; // Create a unique key using data-id
+    localStorage.setItem(key, el.innerText);
+}
+
+function loadFromLocalStorage() {
+    const elements = document.querySelectorAll('.content h1[data-id], .content p[data-id]');
+    elements.forEach(el => {
+        const key = el.tagName + '_' + el.dataset.id; // Use the same unique key
+        const savedContent = localStorage.getItem(key);
+        if (savedContent) {
+            el.innerText = savedContent;
+        }
+    });
+}
+
+
     </script>
 </body>
 </html>
